@@ -28,11 +28,19 @@ makeIndex() {
   local start=$2
   local end=$3
 
+  local firstIndex
+  if [[ $start = 0 ]]
+  then
+    firstIndex=0
+  else
+    firstIndex=1
+  fi
+
   local template="#"
   local chapter
   for chapter in {${start}..${end}}
   do
-    template="${template}\n\n1. [](${chapter}/note.md)"
+    template="${template}\n\n${firstIndex}. [](${chapter}/note.md)"
   done
   echo $template >> "${target}/index.md"
 }
