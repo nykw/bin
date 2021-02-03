@@ -25,8 +25,9 @@ errorHandling () {
 # 指定したパスに目次を作成
 makeIndex() {
   local target=$1
-  local start=$2
-  local end=$3
+  local title=$2
+  local start=$3
+  local end=$4
 
   local firstIndex
   if [[ $start = 0 ]]
@@ -36,7 +37,7 @@ makeIndex() {
     firstIndex=1
   fi
 
-  local template="#"
+  local template="# ${title}\n\n## 目次"
   local chapter
   for chapter in {${start}..${end}}
   do
@@ -90,7 +91,7 @@ makeNote() {
   # 作業用ディレクトリ
   mkdir -p $noteDir
   # 目次
-  makeIndex $noteDir $start $end
+  makeIndex $noteDir $title $start $end
   # images
   makeImages $noteDir
   # 章ディレクトリ
