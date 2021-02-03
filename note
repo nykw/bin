@@ -4,21 +4,21 @@
 
 # コマンドの使い方
 usage() {
-  echo "使用法:\n  $ note <title> <start> <end>"
+  echo "\n使用法:\n $ note <title> <start> <end>"
 }
 
 # エラーハンドリング
 errorHandling () {
-  if [ ! $# = 4 ]
+  if [ ! $# = 4 ] || [[ $2 < 0 ]] || [[ $2 > $3 ]]
   then
     echo "不正な引数です。"
     usage
-    exit 2
+    exit 1
   elif [ -d $4 ]
   then
     local noteDir=$4
     echo "${noteDir}ディレクトリがすでに存在します。"
-    exit 1
+    exit 2
   fi
 }
 
