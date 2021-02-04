@@ -43,7 +43,7 @@ makeIndex() {
   do
     template="${template}\n\n${firstIndex}. [](${chapter}/note.md)"
   done
-  echo $template >> "${target}/index.md"
+  echo $template >> "${target}/README.md"
 }
 
 # 引数に指定したパスに画像ディレクトリ images を作成する
