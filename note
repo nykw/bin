@@ -79,7 +79,6 @@ makeGitRepos() {
   git init
   git add -A
   git commit -m "「${title}」の読書ノートを作成しました。"
-  git checkout -b dev
 }
 
 # ｎoteディレクトリの中身を作成する
