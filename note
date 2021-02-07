@@ -49,7 +49,7 @@ makeIndex() {
 # 引数に指定したパスに画像ディレクトリ images を作成する
 makeImages() {
   local target=$1
-  mkdir -p ${target}/img/{f,l,p,t}
+  mkdir -p ${target}/i/{f,l,p,t}
 }
 
 # 指定したパスに章ごとのディレクトリの内容を作成
