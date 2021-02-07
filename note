@@ -64,7 +64,7 @@ makeChapters() {
     local chapterDir="${target}/$chapter"
 
     mkdir $chapterDir
-    echo "#\n\n[目次](../index.md)" >> "${chapterDir}/note.md"
+    echo "#\n\n[目次](../README.md)" >> "${chapterDir}/note.md"
 
     makeImages ${chapterDir}
   done
