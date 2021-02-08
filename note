@@ -85,7 +85,7 @@ makeGitRepos() {
 makeNote() {
   local title=$1
   local start=$(printf "%02d" $2)
-  local end=$3
+  local end=$(printf "%02d" $3)
   local noteDir=$4
 
   # 作業用ディレクトリ
