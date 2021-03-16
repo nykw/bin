@@ -41,7 +41,7 @@ makeIndex() {
   local chapter
   for chapter in {${start}..${end}}
   do
-    template="${template}\n\n${firstIndex}. [](${chapter}/note.md)"
+    template="${template}\n\n${firstIndex}. [](${chapter}/README.md)"
   done
   echo $template >> "${target}/README.md"
 }
@@ -64,7 +64,7 @@ makeChapters() {
     local chapterDir="${target}/$chapter"
 
     mkdir $chapterDir
-    echo "#\n\n[目次](../README.md)" >> "${chapterDir}/note.md"
+    echo "#\n\n[目次](../README.md)" >> "${chapterDir}/README.md"
 
     makeImages ${chapterDir}
   done
